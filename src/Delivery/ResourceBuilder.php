@@ -368,7 +368,7 @@ class ResourceBuilder
 
         $locales = [];
         foreach ($data->locales as $locale) {
-            $locales[] = new Locale($locale->code, $locale->name, $locale->default);
+            $locales[] = new Locale($locale->code, $locale->name, $locale->fallbackCode, $locale->default);
         }
         $sys = $this->buildSystemProperties($data->sys);
         $space = new Space($data->name, $locales, $sys);
